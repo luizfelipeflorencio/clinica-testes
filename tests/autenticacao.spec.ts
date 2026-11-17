@@ -13,7 +13,7 @@ test.describe("Autenticação", () => {
     const botaoEntrar = await page.getByRole("button", { name: "Entrar" });
     await botaoEntrar.click();
 
-    await page.screenshot({ path: "evidencias/ct-1.png" });
+    await page.screenshot({ path: "evidencias/login/ct-1.png" });
     await expect(page).toHaveTitle("Marcação");
   });
 
@@ -35,7 +35,7 @@ test.describe("Autenticação", () => {
       ),
     ).toBeVisible();
 
-    await page.screenshot({ path: "evidencias/ct-2.png" });
+    await page.screenshot({ path: "evidencias/login/ct-2.png" });
   });
 
   test("Validar login com usuário inexistente", async ({ page }) => {
@@ -56,7 +56,7 @@ test.describe("Autenticação", () => {
       ),
     ).toBeVisible();
 
-    await page.screenshot({ path: "evidencias/ct-3.png" });
+    await page.screenshot({ path: "evidencias/login/ct-3.png" });
   });
 
   test("Validar submissão com campos em branco", async ({ page }) => {
@@ -69,7 +69,7 @@ test.describe("Autenticação", () => {
 
     await expect(page.getByText("Informe a senha")).toBeVisible();
 
-    await page.screenshot({ path: "evidencias/ct-4.png" });
+    await page.screenshot({ path: "evidencias/login/ct-4.png" });
   });
 
   test("Validar acionamento do botão Entrar via teclado", async ({ page }) => {
@@ -85,7 +85,7 @@ test.describe("Autenticação", () => {
 
     await expect(page).toHaveTitle("Marcação");
 
-    await page.screenshot({ path: "evidencias/ct-5.png" });
+    await page.screenshot({ path: "evidencias/login/ct-5.png" });
   });
 
   test("Validar limite máximo de caracteres nos campos", async ({ page }) => {
@@ -109,6 +109,6 @@ test.describe("Autenticação", () => {
       ),
     ).toBeVisible();
 
-    await page.screenshot({ path: "evidencias/ct-6.png" });
+    await page.screenshot({ path: "evidencias/login/ct-6.png" });
   });
 });
