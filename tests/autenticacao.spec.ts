@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Autenticação", () => {
   test("Validar login com credenciais válidas", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const emailInput = await page.getByLabel("E-mail");
     await emailInput.fill("sistema@gmail.com");
@@ -17,7 +17,7 @@ test.describe("Autenticação", () => {
   });
 
   test("Validar login com senha incorreta", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const emailInput = await page.getByLabel("E-mail");
     await emailInput.fill("sistema@gmail.com");
@@ -37,7 +37,7 @@ test.describe("Autenticação", () => {
   });
 
   test("Validar login com usuário inexistente", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const emailInput = await page.getByLabel("E-mail");
     await emailInput.fill("usuario-inexistente@gmail.com");
@@ -57,7 +57,7 @@ test.describe("Autenticação", () => {
   });
 
   test("Validar submissão com campos em branco", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const botaoEntrar = await page.getByRole("button", { name: "Entrar" });
     await botaoEntrar.click();
@@ -69,7 +69,7 @@ test.describe("Autenticação", () => {
   });
 
   test("Validar acionamento do botão Entrar via teclado", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const emailInput = await page.getByLabel("E-mail");
     await emailInput.fill("sistema@gmail.com");
@@ -84,7 +84,7 @@ test.describe("Autenticação", () => {
   });
 
   test("Validar limite máximo de caracteres nos campos", async ({ page }) => {
-    await page.goto("http://187.41.119.192/");
+    await page.goto("/");
 
     const emailInput = await page.getByLabel("E-mail");
     await emailInput.fill(
